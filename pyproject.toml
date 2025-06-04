@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omeka_s_mcp_sample"
+version = "0.1.0"
+description = "MCP server for Omeka S API integration"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.6.0",
+    "mcp-server>=0.1.0",
+    "anthropic>=0.52.1",
+    "python-dotenv>=1.1.0",
+    "aiohttp>=3.8.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "F", "I", "N", "W", "B", "UP", "PL", "RUF"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pyright]
+include = ["server"]
+exclude = ["**/node_modules", "**/__pycache__"]
+pythonVersion = "3.10"
+pythonPlatform = "Darwin"
+typeCheckingMode = "basic" 
